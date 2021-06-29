@@ -1,0 +1,3 @@
+[submodule "extern/libsys"]
+	path = extern/libsys
+	url = git@github.com:vgribov/libsys.git
