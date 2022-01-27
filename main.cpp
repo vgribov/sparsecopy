@@ -4,7 +4,7 @@
 
 #include <sys/stat.h>
 
-#include "file_io.hpp"
+#include "fileio.hpp"
 
 bool is_sparse(const char *buf, size_t size)
 {
@@ -22,7 +22,7 @@ bool is_sparse(const char *buf, size_t size)
     return std::all_of(begin, end, [](char b){ return b == 0; });
 }
 
-void do_copy(sys::File_des src, sys::File_des dst)
+void do_copy(const sys::File& src, const sys::File& dst)
 {
     struct ::stat st{};
     if (::fstat(src.get(), &st) == -1) throw sys::Error{};
